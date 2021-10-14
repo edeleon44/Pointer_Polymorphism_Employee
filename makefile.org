@@ -1,0 +1,13 @@
+
+a.out: 		main.o Employee.o H_Employee.o S_Employee.o
+			g++ main.o Employee.o H_Employee.o S_Employee.o -o a.out
+main.o: 	main.cpp Employee.h S_Employee.h H_Employee.h
+			g++ -g -c main.cpp
+Employee.o:	Employee.h Employee.cpp
+			g++ -g -c Employee.cpp
+
+H_Employee.o: Employee.h H_Employee.h Employee.cpp
+			g++ -g -c H_Employee.cpp
+S_Employee.o: Employee.h S_Employee.h S_Employee.cpp
+			g++ -g -c S_Employee.cpp
+

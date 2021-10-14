@@ -1,0 +1,11 @@
+a.out: 		main.ptr.o Employee.o H_Employee.o S_Employee.o
+			g++ main.ptr.o Employee.o H_Employee.o S_Employee.o -o a.out
+main.ptr.o:	main.ptr.cpp Employee.h S_Employee.h H_Employee.h
+			g++ -c main.ptr.cpp
+Employee.o:	Employee.h Employee.cpp
+			g++ -c Employee.cpp
+H_Employee.o: Employee.h H_Employee.h H_Employee.cpp
+			g++ -c H_Employee.cpp
+S_Employee.o: Employee.h S_Employee.h S_Employee.cpp
+			g++ -c S_Employee.cpp
+
